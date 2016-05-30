@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Config from './config.json';
-import Cell from './components/Cell';
+import Grid from './components/Grid';
+
+const matrix = [
+    [0, 0, 1],
+    [0, 0, 1],
+    [0, 0, 1]
+];
 
 let App = React.createClass({
     render: function () {
         return <div>
-            <Cell alive="true" />
+            <Grid map={matrix} />
         </div>;
     }
 });
