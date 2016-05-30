@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactInterval from 'react-interval';
 import Grid from './components/Grid';
+import TopBar from './components/TopBar';
 import CycleOfLife from './CycleOfLife';
 import {matrix} from './Config';
 
@@ -37,12 +38,13 @@ let App = React.createClass({
     },
 
     render: function () {
-        return <div>
-            <Grid map={this.state.matrix} />
-            <button onClick={this._toggleEnabled}
-                    className={this.state.playback.enabled ? 'btn btn-danger' : 'btn btn-success'}>{this.state.playback.enabled ? 'Stop' : 'Start'}</button>
-            <ReactInterval {...this.state.playback} />
-        </div>;
+        return (
+            <div id="root">
+                <TopBar enabled={this.state.enabled} callback={this._toggleEnabled} />
+                <Grid map={this.state.matrix}/>
+                <ReactInterval {...this.state.playback} />
+            </div>
+        );
     }
 });
 
