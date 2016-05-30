@@ -1,12 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Grid from './components/Grid';
-
-const matrix = [
-    [0, 0, 1],
-    [0, 0, 1],
-    [0, 0, 1]
-];
+import {matrix} from './Config';
 
 let App = React.createClass({
     render: function () {
